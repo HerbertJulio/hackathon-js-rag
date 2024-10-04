@@ -1,0 +1,24 @@
+### Teste o Upload do CSV
+POST http://localhost:3000/api/upload
+Content-Type: multipart/form-data; boundary=---123456789
+
+-----123456789
+Content-Disposition: form-data; name="file"; filename="file.csv"
+Content-Type: text/csv
+
+pergunta,resposta
+Qual é a capital da França?,Paris
+Qual é a cor do céu durante um dia claro?,Azul
+Qual é 2 + 2?,4
+Quem escreveu 'Dom Casmurro'?,Machado de Assis
+Qual é a capital do Brasil?,Brasília
+-----123456789--
+
+
+### Teste a Consulta
+POST http://localhost:3000/api/consult
+Content-Type: application/json
+
+{
+    "question": "Qual é a capital da França?"
+}
